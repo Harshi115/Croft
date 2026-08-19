@@ -16,7 +16,7 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap({ strapi }) {
+  bootstrap({ strapi }: { strapi: any }) {
     console.log('=== CLOUDINARY DIAGNOSTIC ===');
     console.log('CLOUDINARY_NAME set:', !!process.env.CLOUDINARY_NAME);
     console.log('CLOUDINARY_KEY set:', !!process.env.CLOUDINARY_KEY);
