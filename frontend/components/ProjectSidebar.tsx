@@ -16,7 +16,7 @@ const HEADINGS = {
 export default async function ProjectSidebar({ category, activeSlug }: { category?: string; activeSlug?: string }) {
   let items = [];
   try {
-    const res = await strapiFetch("/projects?filters[projectStatus][$eq]=" + STATUS_MAP[category] + "&fields=title,slug&pagination[limit]=20");
+    const res = await strapiFetch("/projects?filters[projectStatus][$eq]=" + STATUS_MAP[category ?? ""] + "&fields=title,slug&pagination[limit]=20");
     items = res.data;
   } catch {}
 
