@@ -1,18 +1,18 @@
-/**
+﻿/**
  * Migrate images from LOCAL Strapi to REMOTE (Render) Strapi.
  * Uses Strapi's /api/upload endpoint with ref/refId/field so images
  * get uploaded (via Cloudinary, since remote has that provider configured)
  * AND linked back to the correct entry + field in one step.
  *
  * Run with: node migrate-images.js
- * Local Strapi must be running (npm run develop) on http://localhost:1337
+ * Local Strapi must be running (npm run develop) on http://127.0.0.1:1337
  */
 
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
 
-const LOCAL_URL = "http://localhost:1337";
+const LOCAL_URL = "http://127.0.0.1:1337";
 const REMOTE_URL = "https://croft-2cp8.onrender.com";
 const REMOTE_TOKEN = "ac24bf1bc009184af552ceba2ef59c8b2f5d3601da5d8349d975fd732aa7a46eebcf63fe3340d76203fae0630bab62c878d373c845f55234ea39f31c3201c1dc42d217df166b414900e7228e86ee61e95dc76e565e1c4271f36fb31b3dc6dc8ae8537009c6b2b6f470081d8449864d1f2cb26f61fbdbd5fdb4203274f58ecb88";
 
@@ -86,9 +86,9 @@ async function processEntry(target, entry) {
         const tmpPath = await downloadToTemp(url);
         await uploadToRemote(tmpPath, path.basename(tmpPath), target.uid, id, field);
         fs.unlinkSync(tmpPath);
-        console.log(`  ✔ ${target.api} #${id} -> ${field}`);
+        console.log(`  âœ” ${target.api} #${id} -> ${field}`);
       } catch (e) {
-        console.error(`  ✖ ${target.api} #${id} -> ${field}: ${e.message}`);
+        console.error(`  âœ– ${target.api} #${id} -> ${field}: ${e.message}`);
       }
     } else if (kind === "multi") {
       const items = Array.isArray(value) ? value : value?.data || [];
@@ -99,9 +99,9 @@ async function processEntry(target, entry) {
           const tmpPath = await downloadToTemp(url);
           await uploadToRemote(tmpPath, path.basename(tmpPath), target.uid, id, field);
           fs.unlinkSync(tmpPath);
-          console.log(`  ✔ ${target.api} #${id} -> ${field} (gallery item)`);
+          console.log(`  âœ” ${target.api} #${id} -> ${field} (gallery item)`);
         } catch (e) {
-          console.error(`  ✖ ${target.api} #${id} -> ${field} (gallery item): ${e.message}`);
+          console.error(`  âœ– ${target.api} #${id} -> ${field} (gallery item): ${e.message}`);
         }
       }
     }
