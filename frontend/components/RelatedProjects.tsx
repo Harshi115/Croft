@@ -1,7 +1,7 @@
 import ProjectCard from "@/components/ProjectCard";
 import { strapiFetch, mediaUrl, relationAttr } from "@/lib/strapi";
 
-const HEADINGS = {
+const HEADINGS: Record<string, string> = {
   "in-progress": "More Current Projects",
   planning: "More Upcoming Projects",
   completed: "More Past Projects"

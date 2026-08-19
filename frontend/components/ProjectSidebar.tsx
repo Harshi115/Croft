@@ -7,7 +7,7 @@ const STATUS_MAP: Record<string, string> = {
   past: "completed"
 };
 
-const HEADINGS = {
+const HEADINGS: Record<string, string> = {
   current: "Current Projects",
   upcoming: "Upcoming Projects",
   past: "Past Projects"

@@ -28,7 +28,7 @@ async function loadRedirects() {
   } catch {
     cache = cache ?? [];
   }
-  return cache;
+  return cache ?? [];
 }
 
 export async function middleware(req: NextRequest) {
