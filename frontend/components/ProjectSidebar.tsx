@@ -23,9 +23,9 @@ export default async function ProjectSidebar({ category, activeSlug }: { categor
   if (items.length === 0) return null;
 
   return (
-    <nav aria-label={HEADINGS[category]} className="border border-primary rounded-[4px] p-[15px]">
+    <nav aria-label={HEADINGS[category ?? ""]} className="border border-primary rounded-[4px] p-[15px]">
       <h2 className="text-dark mb-5 text-[32px] leading-[38px] font-light">
-        {HEADINGS[category]}
+        {HEADINGS[category ?? ""]}
         <span aria-hidden="true" className="border-primary mt-2 block w-[62px] border-t" />
       </h2>
       <ul>
