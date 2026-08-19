@@ -1,7 +1,7 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import FooterEnquiryForm from "./FooterEnquiryForm";
 
-export default function Footer({ settings, logoUrl }) {
+export default function Footer({ settings, logoUrl }: { settings: any; logoUrl?: string }) {
   const year = new Date().getFullYear();
 
   return (
@@ -53,7 +53,7 @@ export default function Footer({ settings, logoUrl }) {
             <div className="mt-6">
               <p className="text-xs uppercase tracking-wide text-white/50 mb-3">Social Share</p>
               <div className="flex gap-3">
-                {settings.socialLinks.map((s) => (
+                {settings.socialLinks.map((s: any) => (
                   <a key={s.platform} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.platform} className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent transition-colors text-sm">
                     {s.platform === "linkedin" && "in"}
                     {s.platform === "youtube" && "YT"}

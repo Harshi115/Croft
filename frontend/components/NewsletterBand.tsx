@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 
@@ -7,7 +7,7 @@ export default function NewsletterBand() {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
 
-  async function handleSubmit(ev) {
+  async function handleSubmit(ev: React.FormEvent<HTMLFormElement>) {
     ev.preventDefault();
     setError("");
     setStatus("submitting");

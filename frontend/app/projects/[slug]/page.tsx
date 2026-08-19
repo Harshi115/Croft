@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { strapiFetch, mediaUrl, relationAttr, relationList } from "@/lib/strapi";
@@ -7,12 +7,12 @@ import Gallery from "@/components/Gallery";
 import ProjectSidebar from "@/components/ProjectSidebar";
 import RelatedProjects from "@/components/RelatedProjects";
 
-async function getProject(slug) {
+async function getProject(slug: string) {
   const res = await strapiFetch("/projects?filters[slug][$eq]=" + encodeURIComponent(slug) + "&populate=heroImage,gallery,sector,serviceType");
   return res.data[0] ?? null;
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = await getProject(slug);
   if (!project) return {};
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
   });
 }
 
-export default async function ProjectDetailPage({ params }) {
+export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = await getProject(slug);
   if (!project) notFound();
@@ -40,12 +40,12 @@ export default async function ProjectDetailPage({ params }) {
   ].filter(Boolean);
 
   const galleryImages = relationList(a.gallery)
-    .map((img) => ({ url: mediaUrl(img), alt: img.alternativeText || "" }))
-    .filter((img) => img.url);
+    .map((img: any) => ({ url: mediaUrl(img), alt: img.alternativeText || "" }))
+    .filter((img: any) => img.url);
 
   const heroUrl = mediaUrl(a.heroImage);
 
-  const CATEGORY_MAP = {
+  const CATEGORY_MAP: Record<string, { label: string; href: string }> = {
     "in-progress": { label: "Current Projects", href: "/current-projects" },
     "planning": { label: "Upcoming Projects", href: "/upcoming-projects" },
     "completed": { label: "Past Projects", href: "/past-projects" }
@@ -109,7 +109,7 @@ export default async function ProjectDetailPage({ params }) {
                   <span aria-hidden="true" className="border-primary mt-2 block w-[62px] border-t" />
                 </h2>
                 <dl className="space-y-3">
-                  {facts.map((f) => (
+                  {facts.map((f: any) => (
                     <div key={f.label} className="border-b border-border pb-2 last:border-b-0">
                       <dt className="text-xs uppercase tracking-wide text-muted">{f.label}</dt>
                       <dd className="text-[15px] text-dark font-medium">{f.value}</dd>

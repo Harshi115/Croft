@@ -11,7 +11,7 @@ export interface StrapiResponse<T> {
   };
 }
 
-export async function strapiFetch<T>(
+export async function strapiFetch<T = any>(
   path: string,
   { revalidate = 0 }: { revalidate?: number } = {}
 ): Promise<StrapiResponse<T>> {

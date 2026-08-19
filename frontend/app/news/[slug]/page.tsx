@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { strapiFetch, mediaUrl, relationAttr } from "@/lib/strapi";
@@ -17,7 +17,7 @@ async function getArticle(slug: string) {
 async function getAdjacentArticles(slug: string) {
   try {
     const res = await strapiFetch<any[]>(`/news-articles?sort=publishDate:desc&pagination[pageSize]=200&fields[0]=slug&fields[1]=title`);
-    const list = res.data.map((n) => ({ ...(n.attributes ?? n), id: n.id }));
+    const list = res.data.map((n: any) => ({ ...(n.attributes ?? n), id: n.id }));
     const index = list.findIndex((a) => a.slug === slug);
     return {
       previous: index > 0 ? list[index - 1] : null,
@@ -82,10 +82,10 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
           {(previous || next) && (
             <nav aria-label="More articles" className="border-t border-border mt-8 pt-5 flex flex-wrap justify-between gap-4">
               {previous ? (
-                <Link href={"/news/" + previous.slug} className="text-primary text-[16px]">← Previous Post</Link>
+                <Link href={"/news/" + previous.slug} className="text-primary text-[16px]">? Previous Post</Link>
               ) : <span />}
               {next && (
-                <Link href={"/news/" + next.slug} className="text-primary text-[16px]">Next Post →</Link>
+                <Link href={"/news/" + next.slug} className="text-primary text-[16px]">Next Post ?</Link>
               )}
             </nav>
           )}

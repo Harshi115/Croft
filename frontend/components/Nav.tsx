@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { label: "Contact", url: "/contact" }
 ];
 
-export default function Nav({ logoUrl }) {
+export default function Nav({ logoUrl }: { logoUrl?: string }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -22,7 +22,7 @@ export default function Nav({ logoUrl }) {
     setMounted(true);
   }, []);
 
-  function isCurrent(url) {
+  function isCurrent(url: string) {
     // Before hydration completes, always report "not active" so the server-
     // rendered HTML and the first client render match exactly — avoids the
     // aria-current/className hydration mismatch warning.
@@ -46,7 +46,7 @@ export default function Nav({ logoUrl }) {
         <div className="hidden lg:flex items-center gap-6 ml-auto">
           <nav aria-label="Primary">
             <ul className="flex items-center">
-              {NAV_ITEMS.map((item) => {
+              {NAV_ITEMS.map((item: any) => {
                 const current = isCurrent(item.url);
                 return (
                   <li key={item.url}>
@@ -71,7 +71,7 @@ export default function Nav({ logoUrl }) {
       {open && (
         <nav id="mobile-nav" aria-label="Primary" className="lg:hidden border-t border-[#e9e9e9] bg-white px-4 py-4">
           <ul className="flex flex-col gap-1">
-            {NAV_ITEMS.map((item) => {
+            {NAV_ITEMS.map((item: any) => {
               const current = isCurrent(item.url);
               return (
                 <li key={item.url}>

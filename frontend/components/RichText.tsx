@@ -9,7 +9,7 @@ export default function RichText({ text }: { text?: string | null }) {
 
   return (
     <div className="prose-croft max-w-none text-[16px] leading-[28px] text-text [&_p]:mb-5 [&_ul]:mb-5 [&_ol]:mb-5 [&_ul]:list-disc [&_ol]:list-decimal [&_li]:ml-5">
-      {blocks.map((block, i) => renderBlock(block, i))}
+      {blocks.map((block: any, i: number) => renderBlock(block, i))}
     </div>
   );
 }
@@ -32,7 +32,7 @@ function renderBlock(block: string, key: number) {
   if (isBulletList && lines.length > 0) {
     return (
       <ul key={key}>
-        {lines.map((l, i) => (
+        {lines.map((l: any, i: number) => (
           <li key={i}>{renderInline(l.trim().replace(/^[-*]\s+/, ""))}</li>
         ))}
       </ul>
@@ -43,7 +43,7 @@ function renderBlock(block: string, key: number) {
   if (isOrderedList && lines.length > 0) {
     return (
       <ol key={key}>
-        {lines.map((l, i) => (
+        {lines.map((l: any, i: number) => (
           <li key={i}>{renderInline(l.trim().replace(/^\d+\.\s+/, ""))}</li>
         ))}
       </ol>
@@ -57,7 +57,7 @@ function renderInline(text: string) {
   // Split on markdown link / bold / italic tokens while keeping the tokens.
   const parts = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*)/g);
 
-  return parts.map((part, i) => {
+  return parts.map((part: any, i: number) => {
     const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (link) {
       return (

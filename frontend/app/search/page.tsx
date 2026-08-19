@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({ title: "Search", description: "Search Croft Developments.", path: "/search" });
 
 // Next.js 15: `searchParams` is a Promise and must be awaited before reading
-// its properties — a framework requirement, not project-specific.
+// its properties â€” a framework requirement, not project-specific.
 export default async function SearchPage({
   searchParams
 }: {

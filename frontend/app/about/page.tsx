@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import { strapiFetch, mediaUrl, relationAttr, relationList } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/seo";
@@ -48,7 +48,7 @@ export default async function AboutPage() {
           <div className="prose-croft mx-auto max-w-3xl">
             {d.intro && <p>{d.intro}</p>}
             {d.body ? (
-              d.body.split("\n\n").map((para, i) => <p key={i}>{para}</p>)
+              d.body.split("\n\n").map((para: string, i: number) => <p key={i}>{para}</p>)
             ) : (
               <p>{FALLBACK.intro}</p>
             )}
@@ -80,7 +80,7 @@ export default async function AboutPage() {
           const galleryImages = relationList(d.gallery);
           return galleryImages.length > 0 && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-10">
-              {galleryImages.map((img, i) => (
+              {galleryImages.map((img: any, i: number) => (
                 <div key={i} className="relative aspect-square rounded-card overflow-hidden bg-surfaceAlt">
                   <img src={mediaUrl(img) ?? ""} alt={img.alternativeText || ""} className="w-full h-full object-cover" />
                 </div>
@@ -92,7 +92,7 @@ export default async function AboutPage() {
         {members.length > 0 && (
           <section aria-labelledby="our-team" className="mt-16">
             <h2 id="our-team" className="font-accent text-dark mb-5 text-center font-normal text-[32px] leading-[38px]">Our Team</h2>
-            {members.map((m, index) => {
+            {members.map((m: any, index: number) => {
               const ma = m.attributes ?? m;
               const photoUrl = mediaUrl(ma.photo);
               const imageFirst = index % 2 === 1;

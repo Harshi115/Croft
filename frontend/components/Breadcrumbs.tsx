@@ -13,7 +13,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
         <li>
           <Link href="/" className="hover:underline">Home</Link>
         </li>
-        {items.map((item, i) => (
+        {items.map((item: any, i: number) => (
           <li key={i} className="flex items-center gap-1">
             <span aria-hidden="true">/</span>
             {item.href ? (

@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export default function PageBanner({ eyebrow, title, breadcrumb }: { eyebrow?: string; title: string; breadcrumb?: { label: string; href?: string }[] }) {
   return (
@@ -15,7 +15,7 @@ export default function PageBanner({ eyebrow, title, breadcrumb }: { eyebrow?: s
         {breadcrumb && breadcrumb.length > 0 && (
           <nav aria-label="Breadcrumb" className="text-sm text-white/70">
             <ol className="flex flex-wrap items-center gap-1">
-              {breadcrumb.map((item, i) => (
+              {breadcrumb.map((item: any, i: number) => (
                 <li key={i} className="flex items-center gap-1">
                   {i > 0 && <span aria-hidden="true">/</span>}
                   {item.href ? (

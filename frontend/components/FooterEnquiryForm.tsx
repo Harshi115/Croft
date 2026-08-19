@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-// A compact version of the enquiry form, for the footer — same backend
+// A compact version of the enquiry form, for the footer â€” same backend
 // endpoint and same consent/honeypot protections as the full form on
 // /contact, just fewer fields to fit the space.
 export default function FooterEnquiryForm() {
@@ -39,7 +39,7 @@ export default function FooterEnquiryForm() {
   if (status === "success") {
     return (
       <p role="status" className="text-white/90 text-sm">
-        Thanks — we'll be in touch shortly.
+        Thanks â€” we'll be in touch shortly.
       </p>
     );
   }
@@ -76,7 +76,7 @@ export default function FooterEnquiryForm() {
         <span>I agree to be contacted about this enquiry.</span>
       </label>
       {error && <p role="alert" className="text-xs text-red-300">{error}</p>}
-      {status === "error" && <p role="alert" className="text-xs text-red-300">Something went wrong — please try again.</p>}
+      {status === "error" && <p role="alert" className="text-xs text-red-300">Something went wrong â€” please try again.</p>}
       <button
         type="submit"
         disabled={status === "submitting"}

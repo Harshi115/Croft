@@ -34,7 +34,7 @@ export default async function TermsPage() {
           <div className="prose max-w-none text-ink whitespace-pre-line leading-relaxed">{page.body}</div>
         ) : (
           <p className="text-stone">
-            Draft legal text pending (DEP-05). This placeholder must not go live — see BRD Section 22.
+            Draft legal text pending (DEP-05). This placeholder must not go live â€” see BRD Section 22.
           </p>
         )}
       </div>

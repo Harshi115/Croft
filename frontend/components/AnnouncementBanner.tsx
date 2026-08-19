@@ -35,7 +35,7 @@ export default function AnnouncementBanner({ data }: { data?: AnnouncementData }
         aria-label="Dismiss announcement"
         className="absolute right-3 min-w-[32px] min-h-[32px]"
       >
-        ✕
+        âœ•
       </button>
     </div>
   );

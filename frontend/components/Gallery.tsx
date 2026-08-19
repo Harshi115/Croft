@@ -49,7 +49,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
   return (
     <>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8" role="list" aria-label="Project gallery">
-        {images.map((img, i) => (
+        {images.map((img: any, i: number) => (
           <button
             key={i}
             type="button"
@@ -76,7 +76,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
             className="absolute top-4 right-4 min-w-[44px] min-h-[44px] text-white text-2xl"
             aria-label="Close gallery"
           >
-            ✕
+            âœ•
           </button>
           <button
             type="button"
@@ -84,7 +84,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
             className="absolute left-4 min-w-[44px] min-h-[44px] text-white text-3xl"
             aria-label="Previous image"
           >
-            ‹
+            â€¹
           </button>
           <div className="relative w-full max-w-4xl h-[70vh] mx-16">
             <Image
@@ -100,7 +100,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
             className="absolute right-4 min-w-[44px] min-h-[44px] text-white text-3xl"
             aria-label="Next image"
           >
-            ›
+            â€º
           </button>
         </div>
       )}

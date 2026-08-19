@@ -29,7 +29,7 @@ export default function ExternalLink({ href, children, className = "", ...rest }
       {...rest}
     >
       {children}
-      <span aria-hidden="true" className="text-xs">↗</span>
+      <span aria-hidden="true" className="text-xs">â†—</span>
       <span className="sr-only">(opens in a new tab)</span>
     </a>
   );

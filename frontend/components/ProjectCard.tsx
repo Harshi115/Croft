@@ -1,7 +1,7 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 
-export default function ProjectCard({ project, index, priority }) {
+export default function ProjectCard({ project, index, priority }: { project: any; index?: number; priority?: boolean }) {
   const href = "/projects/" + project.slug;
 
   return (

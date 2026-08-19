@@ -53,7 +53,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
           {a.summary && <p className="text-lg text-stone leading-relaxed mb-8">{a.summary}</p>}
 
-          {/* Legacy "body" (blocks) field — kept for services that use it instead of subsections */}
+          {/* Legacy "body" (blocks) field â€” kept for services that use it instead of subsections */}
           <BlockContent blocks={a.body} />
 
           {/* Each subsection is one topic block from the CMS: heading, body copy and a photo gallery */}

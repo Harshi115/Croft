@@ -7,7 +7,7 @@ const HEADINGS = {
   completed: "More Past Projects"
 };
 
-// Foot-of-page strip on every project detail page — other projects with the
+// Foot-of-page strip on every project detail page â€” other projects with the
 // same status (current / upcoming / past), excluding the one being viewed.
 export default async function RelatedProjects({ status, excludeSlug }: { status: string; excludeSlug: string }) {
   let items: any[] = [];

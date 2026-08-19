@@ -1,9 +1,9 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-export default function Hero({ eyebrow, heading, supportingCopy, ctaLabel, ctaHref, slides }) {
+export default function Hero({ eyebrow, heading, supportingCopy, ctaLabel, ctaHref, slides }: { eyebrow?: string; heading?: string; supportingCopy?: string; ctaLabel?: string; ctaHref?: string; slides?: any[] }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reducedMotion = useRef(false);
@@ -24,7 +24,7 @@ export default function Hero({ eyebrow, heading, supportingCopy, ctaLabel, ctaHr
   return (
     <section aria-label="Featured Croft Developments projects" className="relative w-full overflow-hidden bg-[#31343c]" onMouseEnter={() => setPaused(true)} onMouseLeave={() => !reducedMotion.current && setPaused(false)}>
       <div className="relative aspect-[1920/767] max-h-[767px] min-h-[280px] w-full">
-        {effectiveSlides.map((slide, i) => (
+        {effectiveSlides.map((slide: any, i: number) => (
           <div key={i} aria-hidden={i !== index} className={"absolute inset-0 transition-opacity duration-1000 " + (i === index ? "opacity-100" : "pointer-events-none opacity-0")}>
             {slide.image && (
               <Image src={slide.image} alt="" fill sizes="100vw" priority={i === 0} quality={90} className="object-cover object-center" />
@@ -57,7 +57,7 @@ export default function Hero({ eyebrow, heading, supportingCopy, ctaLabel, ctaHr
 
       {effectiveSlides.length > 1 && (
         <div className="absolute inset-x-0 bottom-[10px] flex justify-center gap-2">
-          {effectiveSlides.map((_, i) => (
+          {effectiveSlides.map((_: any, i: number) => (
             <button key={i} type="button" aria-label={"Show slide " + (i + 1)} aria-current={i === index} onClick={() => setIndex(i)} className={"h-[10px] w-[10px] rounded-full transition-colors " + (i === index ? "bg-primary" : "bg-white/60 hover:bg-white")} />
           ))}
         </div>

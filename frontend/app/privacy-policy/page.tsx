@@ -22,7 +22,7 @@ export async function generateMetadata() {
 
 // FR-088+: content sourced from the `legal-page` collection (slug: privacy-policy)
 // so Croft's nominated privacy contact and legal text stay editable without a
-// deploy. Falls back to a clearly-marked placeholder until that content exists —
+// deploy. Falls back to a clearly-marked placeholder until that content exists â€”
 // real legal text is a client dependency (DEP-05), not something to draft here.
 export default async function PrivacyPolicyPage() {
   const page = await getLegalPage();
@@ -38,7 +38,7 @@ export default async function PrivacyPolicyPage() {
           <div className="prose max-w-none text-ink whitespace-pre-line leading-relaxed">{page.body}</div>
         ) : (
           <p className="text-stone">
-            Draft legal text pending (DEP-05). This placeholder must not go live — see BRD Section 22.
+            Draft legal text pending (DEP-05). This placeholder must not go live â€” see BRD Section 22.
           </p>
         )}
       </div>

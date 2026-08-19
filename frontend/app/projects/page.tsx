@@ -1,4 +1,4 @@
-﻿import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/ProjectCard";
 import PageBanner from "@/components/PageBanner";
 import { strapiFetch, mediaUrl, relationAttr } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/seo";
@@ -15,9 +15,9 @@ const TABS = [
   { key: "past", label: "Past", status: "completed" }
 ];
 
-export default async function ProjectsIndexPage({ searchParams }) {
+export default async function ProjectsIndexPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | undefined }> }) {
   const params = await searchParams;
-  const activeTab = TABS.find((t) => t.key === params.status) ?? TABS[0];
+  const activeTab = TABS.find((t: any) => t.key === params.status) ?? TABS[0];
 
   let projects = [];
   try {
@@ -31,7 +31,7 @@ export default async function ProjectsIndexPage({ searchParams }) {
 
       <div className="mx-auto max-w-[1170px] px-4 py-10">
         <div role="tablist" aria-label="Project status" className="flex gap-2 mb-10 border-b border-border">
-          {TABS.map((tab) => {
+          {TABS.map((tab: any) => {
             const active = tab.key === activeTab.key;
             return (
               <a key={tab.key} href={"?status=" + tab.key} role="tab" aria-selected={active} className={"px-6 py-3 text-[16px] font-heading border-b-2 -mb-px transition-colors " + (active ? "border-primary text-primary" : "border-transparent text-dark hover:text-primary")}>
@@ -45,7 +45,7 @@ export default async function ProjectsIndexPage({ searchParams }) {
           <p className="text-text">No {activeTab.label.toLowerCase()} projects published yet.</p>
         ) : (
           <ul className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p, i) => {
+            {projects.map((p: any, i: number) => {
               const a = p.attributes ?? p;
               return (
                 <li key={p.id}>

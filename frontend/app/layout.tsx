@@ -32,7 +32,7 @@ async function getSiteSettings() {
   }
 }
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const settings = await getSiteSettings();
   const announcement = settings?.announcementBanner;
   const logoUrl = mediaUrl(settings?.logo);

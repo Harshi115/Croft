@@ -1,4 +1,4 @@
-﻿export interface SocialLink {
+export interface SocialLink {
   platform: string;
   url: string;
 }
@@ -50,7 +50,7 @@ export default function TopBar({
         </div>
         {socialLinks && socialLinks.length > 0 && (
           <div className="flex items-center gap-4">
-            {socialLinks.map((s) => (
+            {socialLinks.map((s: any) => (
               <a key={s.platform} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.platform} className="hover:opacity-80 transition-opacity">
                 {ICONS[s.platform] || s.platform}
               </a>

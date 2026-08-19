@@ -10,7 +10,7 @@ interface FormState {
   message: string;
   consent: boolean;
   newsletterOptIn: boolean;
-  website: string; // honeypot — real users never fill this
+  website: string; // honeypot â€” real users never fill this
 }
 
 const INITIAL: FormState = {
@@ -84,7 +84,7 @@ export default function EnquiryForm({ sourcePage }: { sourcePage: string }) {
         role="status"
         className="rounded border border-green-600 bg-green-50 p-4 text-green-900"
       >
-        <p className="font-semibold">Thanks — your enquiry has been sent.</p>
+        <p className="font-semibold">Thanks â€” your enquiry has been sent.</p>
         <p>We'll be in touch shortly. A confirmation has been sent to your email.</p>
       </div>
     );
@@ -92,7 +92,7 @@ export default function EnquiryForm({ sourcePage }: { sourcePage: string }) {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-4 max-w-xl">
-      {/* Honeypot — hidden from sighted users and screen readers, bots fill it */}
+      {/* Honeypot â€” hidden from sighted users and screen readers, bots fill it */}
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Leave this field blank</label>
         <input
@@ -197,7 +197,7 @@ export default function EnquiryForm({ sourcePage }: { sourcePage: string }) {
             onChange={(e) => setForm({ ...form, newsletterOptIn: e.target.checked })}
           />
           <span>
-            Also send me Croft Developments news (separate from the above — you'll get a
+            Also send me Croft Developments news (separate from the above â€” you'll get a
             confirmation email to opt in).
           </span>
         </label>
@@ -214,7 +214,7 @@ export default function EnquiryForm({ sourcePage }: { sourcePage: string }) {
         disabled={status === "submitting"}
         className="bg-brand-accent text-white font-medium px-6 py-3 rounded min-h-[44px] disabled:opacity-60 hover:opacity-90"
       >
-        {status === "submitting" ? "Sending…" : "Send enquiry"}
+        {status === "submitting" ? "Sendingâ€¦" : "Send enquiry"}
       </button>
     </form>
   );

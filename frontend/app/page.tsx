@@ -1,4 +1,4 @@
-﻿import Hero from "@/components/Hero";
+import Hero from "@/components/Hero";
 import PostCard from "@/components/PostCard";
 import { strapiFetch, mediaUrl, relationAttr, relationList } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/seo";
@@ -46,17 +46,17 @@ export default async function HomePage() {
   const news = data.news;
   const h = data.hero ?? {};
 
-  const manualSlides = (h.heroCarouselSlides ?? []).map((s) => ({
+  const manualSlides = (h.heroCarouselSlides ?? []).map((s: any) => ({
     image: mediaUrl(s.image) ?? "",
     heading: s.heading,
     ctaLabel: s.ctaLabel,
     ctaHref: s.ctaHref
-  })).filter((s) => s.image);
+  })).filter((s: any) => s.image);
 
-  const projectSlides = featured.map((p) => {
+  const projectSlides = featured.map((p: any) => {
     const a = p.attributes ?? p;
     return { image: mediaUrl(a.heroImage) ?? "", caption: a.location || a.title };
-  }).filter((s) => s.image);
+  }).filter((s: any) => s.image);
 
   const slides = manualSlides.length >= 2 ? manualSlides : projectSlides.length >= 2 ? projectSlides : undefined;
 
@@ -64,7 +64,7 @@ export default async function HomePage() {
     { value: h.statValue1, label: h.statLabel1 },
     { value: h.statValue2, label: h.statLabel2 },
     { value: h.statValue3, label: h.statLabel3 }
-  ].filter((s) => s.value && s.label);
+  ].filter((s: any) => s.value && s.label);
 
   const phoneHref = phone ? "tel:" + phone.replace(/[^+\d]/g, "") : "";
 
@@ -81,7 +81,7 @@ export default async function HomePage() {
       {stats.length > 0 && (
         <section className="bg-charcoal text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10 grid grid-cols-3 gap-6 text-center">
-            {stats.map((s, i) => (
+            {stats.map((s: any, i: number) => (
               <div key={i}>
                 <p className="font-heading text-3xl sm:text-5xl font-semibold text-brand-accent">{s.value}</p>
                 <p className="text-xs sm:text-sm uppercase tracking-wide text-white/70 mt-2">{s.label}</p>
@@ -96,7 +96,7 @@ export default async function HomePage() {
         return logos.length > 0 && (
           <section className="border-b border-black/10 py-10 bg-paper">
             <div className="mx-auto max-w-7xl px-4 flex flex-wrap items-center justify-center gap-8">
-              {logos.map((logo, i) => (
+              {logos.map((logo: any, i: number) => (
                 <img key={i} src={mediaUrl(logo) ?? ""} alt={logo.alternativeText || ""} className="h-10 sm:h-12 object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition" />
               ))}
             </div>
@@ -119,7 +119,7 @@ export default async function HomePage() {
             <p className="text-stone">Featured projects will appear here once content is published in Strapi.</p>
           ) : (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {featured.slice(0, 4).map((p) => {
+              {featured.slice(0, 4).map((p: any) => {
                 const a = p.attributes ?? p;
                 const imgUrl = mediaUrl(a.heroImage);
                 const sector = a.sector?.data?.attributes?.name ?? a.sector?.name;
@@ -173,7 +173,7 @@ export default async function HomePage() {
             <p className="text-stone">Services will appear here once entries are published in Strapi.</p>
           ) : (
             <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
-              {services.map((s) => {
+              {services.map((s: any) => {
                 const a = s.attributes ?? s;
                 return (
                   <PostCard
@@ -209,7 +209,7 @@ export default async function HomePage() {
           const images = relationList(h.aboutImages);
           return images.length > 0 && (
             <div className="grid grid-cols-3 gap-2">
-              {images.slice(0, 6).map((img, i) => (
+              {images.slice(0, 6).map((img: any, i: number) => (
                 <div key={i} className="relative aspect-square rounded-lg overflow-hidden bg-paper-alt">
                   <img src={mediaUrl(img) ?? ""} alt={img.alternativeText || ""} className="w-full h-full object-cover" />
                 </div>
@@ -236,7 +236,7 @@ export default async function HomePage() {
             <p className="text-stone">News articles will appear here once entries are published in Strapi.</p>
           ) : (
             <div className="grid gap-6 sm:grid-cols-3">
-              {news.map((n) => {
+              {news.map((n: any) => {
                 const a = n.attributes ?? n;
                 const imgUrl = mediaUrl(a.heroImage);
                 return (

@@ -1,11 +1,11 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import { strapiFetch, mediaUrl } from "@/lib/strapi";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({ title: "Media", description: "Latest news from Croft Developments.", path: "/news" });
 
-export default async function NewsIndexPage({ searchParams }) {
+export default async function NewsIndexPage({ searchParams }: { searchParams: Promise<{ page?: string; category?: string }> }) {
   const params = await searchParams;
   const page = Number(params.page || "1");
   const filter = params.category ? "filters[category][slug][$eq]=" + encodeURIComponent(params.category) + "&" : "";
@@ -27,7 +27,7 @@ export default async function NewsIndexPage({ searchParams }) {
           <p className="text-text">No news articles published yet.</p>
         ) : (
           <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
-            {articles.map((n, i) => {
+            {articles.map((n: any, i: number) => {
               const a = n.attributes ?? n;
               const imgUrl = mediaUrl(a.heroImage);
               return (
@@ -65,7 +65,7 @@ export default async function NewsIndexPage({ searchParams }) {
         )}
         {pageCount > 1 && (
           <nav aria-label="Pagination" className="flex gap-2 mt-14 justify-center">
-            {Array.from({ length: pageCount }, (_, i) => i + 1).map((p) => (
+            {Array.from({ length: pageCount }, (_, i) => i + 1).map((p: any) => (
               <a key={p} href={"?page=" + p} aria-current={p === page ? "page" : undefined} className={"min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border text-sm font-medium " + (p === page ? "bg-primary text-white border-primary" : "border-border text-dark hover:border-primary")}>
                 {p}
               </a>

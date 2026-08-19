@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { strapiFetch } from "@/lib/strapi";
 
 const STATUS_MAP = {
@@ -13,7 +13,7 @@ const HEADINGS = {
   past: "Past Projects"
 };
 
-export default async function ProjectSidebar({ category, activeSlug }) {
+export default async function ProjectSidebar({ category, activeSlug }: { category?: string; activeSlug?: string }) {
   let items = [];
   try {
     const res = await strapiFetch("/projects?filters[projectStatus][$eq]=" + STATUS_MAP[category] + "&fields=title,slug&pagination[limit]=20");
@@ -29,7 +29,7 @@ export default async function ProjectSidebar({ category, activeSlug }) {
         <span aria-hidden="true" className="border-primary mt-2 block w-[62px] border-t" />
       </h2>
       <ul>
-        {items.map((p) => {
+        {items.map((p: any) => {
           const a = p.attributes ?? p;
           const isActive = a.slug === activeSlug;
           return (

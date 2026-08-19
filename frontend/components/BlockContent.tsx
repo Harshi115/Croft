@@ -8,7 +8,7 @@ export default function BlockContent({ blocks }: { blocks?: any[] }) {
 
   return (
     <div className="prose-croft max-w-none text-[16px] leading-[28px] text-text [&_p]:mb-5 [&_ul]:mb-5 [&_ol]:mb-5 [&_ul]:list-disc [&_ol]:list-decimal [&_li]:ml-5">
-      {blocks.map((block, i) => renderBlock(block, i))}
+      {blocks.map((block: any, i: number) => renderBlock(block, i))}
     </div>
   );
 }
