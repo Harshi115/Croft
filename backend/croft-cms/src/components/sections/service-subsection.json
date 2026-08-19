@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_service_subsections",
+  "info": {
+    "displayName": "Service Subsection",
+    "description": "One topic block within a Service page: a heading, body text and a photo gallery."
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": false
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

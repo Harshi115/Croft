@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_sections_contact_forms",
+  "info": { "displayName": "Contact Form" },
+  "attributes": {
+    "heading": { "type": "string" },
+    "variant": { "type": "enumeration", "enum": ["standard", "compact"], "default": "standard" },
+    "recipientOverride": { "type": "email" }
+  }
+}

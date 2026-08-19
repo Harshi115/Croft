@@ -1,0 +1,11 @@
+{
+  "kind": "collectionType",
+  "collectionName": "redirects",
+  "info": { "singularName": "redirect", "pluralName": "redirects", "displayName": "Redirect" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "source": { "type": "string", "required": true, "unique": true, "description": "Legacy path, e.g. /old-page" },
+    "destination": { "type": "string", "required": true },
+    "permanent": { "type": "boolean", "default": true }
+  }
+}

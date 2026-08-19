@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_sections_accordions",
+  "info": { "displayName": "Accordion" },
+  "attributes": {
+    "heading": { "type": "string" },
+    "items": { "type": "component", "component": "sections.accordion-item", "repeatable": true }
+  }
+}

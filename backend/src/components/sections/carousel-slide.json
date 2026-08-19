@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_sections_carousel_slides",
+  "info": { "displayName": "Carousel Slide" },
+  "attributes": {
+    "image": { "type": "media", "multiple": false, "required": true, "allowedTypes": ["images"] },
+    "heading": { "type": "string" },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" }
+  }
+}

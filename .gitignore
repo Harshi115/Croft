@@ -1,0 +1,20 @@
+﻿# Frontend (Next.js)
+frontend/node_modules
+frontend/.next
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+frontend/out
+
+# Backend (Strapi)
+backend/croft-cms/node_modules
+backend/croft-cms/.env
+backend/croft-cms/dist
+backend/croft-cms/.strapi
+backend/croft-cms/build
+backend/croft-cms/.cache
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode

@@ -1,0 +1,11 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsletter_subscribers",
+  "info": { "singularName": "newsletter-subscriber", "pluralName": "newsletter-subscribers", "displayName": "Newsletter Subscriber" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "email": { "type": "email", "required": true, "unique": true },
+    "subscribedAt": { "type": "datetime", "required": true },
+    "confirmed": { "type": "boolean", "default": false, "description": "FR-052: double opt-in - true only after the confirmation link is clicked" }
+  }
+}

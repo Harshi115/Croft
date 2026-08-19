@@ -1,0 +1,46 @@
+﻿{
+  "kind": "singleType",
+  "collectionName": "home_page",
+  "info": { "singularName": "home-page", "pluralName": "home-pages", "displayName": "Home Page" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "heroEyebrow": { "type": "string", "description": "Small label above the hero heading" },
+    "heroHeading": { "type": "string", "required": true },
+    "heroSupportingCopy": { "type": "text" },
+    "heroImage": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "heroCtaLabel": { "type": "string" },
+    "heroCtaHref": { "type": "string" },
+    "heroCarouselSlides": { "type": "component", "component": "sections.carousel-slide", "repeatable": true },
+    "trustLogos": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+
+    "featuredEyebrow": { "type": "string" },
+    "featuredHeading": { "type": "string" },
+    "featuredCtaLabel": { "type": "string" },
+
+    "servicesEyebrow": { "type": "string" },
+    "servicesHeading": { "type": "string" },
+    "servicesCtaLabel": { "type": "string" },
+
+    "aboutEyebrow": { "type": "string" },
+    "aboutHeading": { "type": "string" },
+    "aboutBody": { "type": "text" },
+    "aboutImages": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+    "aboutCtaLabel": { "type": "string" },
+    "aboutCtaHref": { "type": "string" },
+
+    "newsEyebrow": { "type": "string" },
+    "newsHeading": { "type": "string" },
+    "newsCtaLabel": { "type": "string" },
+
+    "closingHeading": { "type": "string" },
+    "closingCtaLabel": { "type": "string" },
+    "closingImage": { "type": "media", "multiple": false, "allowedTypes": ["images"], "description": "Background image for the closing Ready to start a project band" },
+
+    "statValue1": { "type": "string" },
+    "statLabel1": { "type": "string" },
+    "statValue2": { "type": "string" },
+    "statLabel2": { "type": "string" },
+    "statValue3": { "type": "string" },
+    "statLabel3": { "type": "string" }
+  }
+}

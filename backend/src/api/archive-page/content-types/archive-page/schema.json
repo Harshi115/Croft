@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "archive_page",
+  "info": { "singularName": "archive-page", "pluralName": "archive-pages", "displayName": "Archive Page Headers" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "projectsEyebrow": { "type": "string", "description": "Projects index page banner label" },
+    "projectsHeading": { "type": "string", "description": "Projects index page title" },
+    "servicesEyebrow": { "type": "string" },
+    "servicesHeading": { "type": "string" },
+    "newsEyebrow": { "type": "string" },
+    "newsHeading": { "type": "string" },
+    "contactEyebrow": { "type": "string" },
+    "contactHeading": { "type": "string" },
+    "contactIntro": { "type": "text", "description": "Short paragraph shown above the contact form" },
+    "searchEyebrow": { "type": "string" },
+    "searchHeading": { "type": "string" }
+  }
+}

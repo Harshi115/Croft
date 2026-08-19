@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": { "singularName": "service", "pluralName": "services", "displayName": "Service" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title", "required": true },
+    "summary": { "type": "text", "maxLength": 255 },
+    "body": { "type": "blocks" },
+    "heroImage": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "icon": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "order": { "type": "integer", "default": 0 },
+    "projects": { "type": "relation", "relation": "manyToMany", "target": "api::project.project" },
+    "metaTitle": { "type": "string" },
+    "metaDescription": { "type": "text", "maxLength": 160 },
+    "legacySlug": { "type": "string" }
+  }
+}

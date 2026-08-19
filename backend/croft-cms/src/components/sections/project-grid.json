@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_sections_project_grids",
+  "info": { "displayName": "Project Grid" },
+  "attributes": {
+    "heading": { "type": "string" },
+    "mode": { "type": "enumeration", "enum": ["manual", "sector-filter", "featured"], "default": "featured" },
+    "sector": { "type": "relation", "relation": "oneToOne", "target": "api::sector.sector" },
+    "manualProjects": { "type": "relation", "relation": "oneToMany", "target": "api::project.project" },
+    "itemCount": { "type": "integer", "default": 6 }
+  }
+}

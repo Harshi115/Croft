@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_page",
+  "info": { "singularName": "about-page", "pluralName": "about-pages", "displayName": "About Page" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "eyebrow": { "type": "string", "description": "e.g. 'Our Story'" },
+    "heading": { "type": "string", "required": true },
+    "intro": { "type": "text", "description": "Larger lead paragraph shown directly under the heading" },
+    "body": { "type": "text" },
+    "foundedYear": { "type": "string" },
+    "founderName": { "type": "string" },
+    "heroImage": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "gallery": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+    "statValue1": { "type": "string" },
+    "statLabel1": { "type": "string" },
+    "statValue2": { "type": "string" },
+    "statLabel2": { "type": "string" },
+    "statValue3": { "type": "string" },
+    "statLabel3": { "type": "string" },
+    "metaTitle": { "type": "string" },
+    "metaDescription": { "type": "text", "maxLength": 160 }
+  }
+}

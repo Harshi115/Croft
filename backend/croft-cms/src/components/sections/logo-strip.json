@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_sections_logo_strips",
+  "info": { "displayName": "Logo Strip" },
+  "attributes": {
+    "heading": { "type": "string" },
+    "logos": { "type": "media", "multiple": true, "allowedTypes": ["images"] }
+  }
+}

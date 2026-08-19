@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": { "displayName": "Hero" },
+  "attributes": {
+    "heading": { "type": "string", "required": true },
+    "supportingCopy": { "type": "text" },
+    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" },
+    "carouselSlides": { "type": "component", "component": "sections.carousel-slide", "repeatable": true }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_sections_announcements",
+  "info": { "displayName": "Announcement Banner" },
+  "attributes": {
+    "message": { "type": "string" },
+    "active": { "type": "boolean", "default": false },
+    "startDate": { "type": "date" },
+    "endDate": { "type": "date" },
+    "linkHref": { "type": "string" },
+    "linkLabel": { "type": "string" }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_page",
+  "info": { "singularName": "home-page", "pluralName": "home-pages", "displayName": "Home Page" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "heroHeading": { "type": "string", "required": true },
+    "heroSupportingCopy": { "type": "text" },
+    "heroImage": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "heroCtaLabel": { "type": "string" },
+    "heroCtaHref": { "type": "string" },
+    "heroCarouselSlides": { "type": "component", "component": "sections.carousel-slide", "repeatable": true, "description": "FR-013: if 2+ slides are added, the hero renders as a carousel instead of a single static image" },
+    "trustLogos": { "type": "media", "multiple": true, "allowedTypes": ["images"], "description": "FR-017: accreditation/client logos shown on Home" },
+    "aboutHeading": { "type": "string", "description": "e.g. 'About Croft Group'" },
+    "aboutBody": { "type": "text", "description": "Short company summary shown on Home, mirrors the existing site's About blurb" },
+    "aboutImages": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+    "aboutCtaLabel": { "type": "string" },
+    "aboutCtaHref": { "type": "string" },
+    "statValue1": { "type": "string", "description": "e.g. '30+'" },
+    "statLabel1": { "type": "string", "description": "e.g. 'Years in operation'" },
+    "statValue2": { "type": "string" },
+    "statLabel2": { "type": "string" },
+    "statValue3": { "type": "string" },
+    "statLabel3": { "type": "string" }
+  }
+}

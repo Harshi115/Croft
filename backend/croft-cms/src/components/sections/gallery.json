@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_sections_galleries",
+  "info": { "displayName": "Gallery" },
+  "attributes": {
+    "heading": { "type": "string" },
+    "images": { "type": "media", "multiple": true, "required": true, "allowedTypes": ["images"] },
+    "layout": { "type": "enumeration", "enum": ["grid", "masonry"], "default": "grid" }
+  }
+}

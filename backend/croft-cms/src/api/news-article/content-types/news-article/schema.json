@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_articles",
+  "info": { "singularName": "news-article", "pluralName": "news-articles", "displayName": "News Article" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "title", "required": true },
+    "excerpt": { "type": "text", "maxLength": 255 },
+    "body": { "type": "blocks" },
+    "heroImage": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "author": { "type": "string" },
+    "publishDate": { "type": "datetime", "required": true },
+    "category": { "type": "relation", "relation": "manyToOne", "target": "api::news-category.news-category", "inversedBy": "articles" },
+    "metaTitle": { "type": "string" },
+    "metaDescription": { "type": "text", "maxLength": 160 },
+    "legacySlug": { "type": "string" }
+  }
+}

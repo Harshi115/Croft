@@ -1,0 +1,19 @@
+﻿{
+  "kind": "singleType",
+  "collectionName": "site_setting",
+  "info": { "singularName": "site-setting", "pluralName": "site-settings", "displayName": "Site Settings" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "companyName": { "type": "string" },
+    "logo": { "type": "media", "multiple": false, "allowedTypes": ["images"], "description": "Main site logo, used in the header on every page" },
+    "abn": { "type": "string" },
+    "builderLicences": { "type": "json", "description": "Array of {state, number}" },
+    "phone": { "type": "string" },
+    "email": { "type": "email" },
+    "address": { "type": "text" },
+    "enquiryNotificationRecipients": { "type": "json", "description": "Array of email addresses" },
+    "socialLinks": { "type": "json" },
+    "footerAboutText": { "type": "text", "description": "Short About Us description shown in the footer" },
+    "announcementBanner": { "type": "component", "component": "sections.announcement", "repeatable": false }
+  }
+}

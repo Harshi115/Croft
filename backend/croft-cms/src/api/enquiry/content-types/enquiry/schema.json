@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enquiries",
+  "info": { "singularName": "enquiry", "pluralName": "enquiries", "displayName": "Enquiry" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "email": { "type": "email", "required": true },
+    "phone": { "type": "string" },
+    "enquiryType": { "type": "string" },
+    "message": { "type": "text", "required": true },
+    "consent": { "type": "boolean", "required": true },
+    "newsletterOptIn": { "type": "boolean", "default": false },
+    "sourcePage": { "type": "string" },
+    "submittedAt": { "type": "datetime", "required": true },
+    "ipAddress": { "type": "string" }
+  }
+}
