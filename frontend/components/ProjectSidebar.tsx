@@ -1,7 +1,7 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { strapiFetch } from "@/lib/strapi";
 
-const STATUS_MAP = {
+const STATUS_MAP: Record<string, string> = {
   current: "in-progress",
   upcoming: "planning",
   past: "completed"
