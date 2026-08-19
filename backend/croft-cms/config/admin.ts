@@ -11,10 +11,6 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => 
     token: {
       salt: env('TRANSFER_TOKEN_SALT')!,
     },
-    remote: {
-      enabled: true,
-      assetIdleTimeoutMs: 300000,
-    },
   },
   secrets: {
     encryptionKey: env('ENCRYPTION_KEY')!,
